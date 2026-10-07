@@ -1,0 +1,23 @@
+# TODO: change these for each project
+appId: com.example.app
+productName: My App
+copyright: Copyright © 2026 Your Name
+directories:
+  output: electron-dist
+files:
+  - package.json
+  - electron/**
+  - out/**
+  # The app is the static export in out/, so the project's build-time
+  # dependencies (Next, React, Sass and what they pull in) don't ship with it.
+  # Only electron-serve and electron-store (and their dependencies) are needed.
+  # If you add a dependency that the Electron main process needs (electron/*.js),
+  # it is included automatically; build-time-only ones can be added to this list.
+  - "!node_modules/{next,@next,@swc,@img,@parcel,sharp,sass,react,react-dom,scheduler,styled-jsx,caniuse-lite,baseline-browser-mapping,postcss,source-map-js,picocolors,nanoid,client-only,chokidar,readdirp,immutable,is-glob,is-extglob,node-addon-api,detect-libc}/**"
+publish: null
+# Nothing in the Electron app needs compiling for Electron (all pure JavaScript)
+npmRebuild: false
+nsis:
+  differentialPackage: false
+dmg:
+  writeUpdateInfo: false
