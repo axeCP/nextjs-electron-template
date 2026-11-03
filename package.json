@@ -10,7 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "electron:dev": "electron . --dev",
+    "electron:dev": "concurrently -k -n next,electron -c blue,magenta \"next dev\" \"wait-on http-get://localhost:3000 && electron . --dev\"",
     "electron:export": "cross-env ELECTRON=1 next build",
     "electron:start": "npm run electron:export && electron .",
     "electron:build": "npm run electron:export && electron-builder",
@@ -27,10 +27,12 @@
     "sass": "^1.77.3"
   },
   "devDependencies": {
+    "concurrently": "^9.2.5",
     "cross-env": "^7.0.3",
     "electron": "^34.0.0",
     "electron-builder": "^24.13.3",
     "eslint": "^9",
-    "eslint-config-next": "16.3.0"
+    "eslint-config-next": "16.3.0",
+    "wait-on": "^8.0.5"
   }
 }

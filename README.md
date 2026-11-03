@@ -28,7 +28,7 @@ npm run dev
 | Script                            | What it does                                                          |
 | --------------------------------- | --------------------------------------------------------------------- |
 | `npm run dev` / `build` / `start` | Normal Next.js                                                        |
-| `npm run electron:dev`            | Electron window showing your running `npm run dev` (start that first) |
+| `npm run electron:dev`            | Starts `next dev`, then opens Electron on it once it's up            |
 | `npm run electron:start`          | Static export, then run it in Electron (nothing packaged)             |
 | `npm run electron:build`          | Static export + packaged app for the current platform                 |
 | `npm run electron:build:win`      | Static export + packaged app for Windows 32-bit                       |
